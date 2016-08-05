@@ -7,8 +7,6 @@ var method =require('method-override');
 var path = require('path');
 
 
-
-
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -20,9 +18,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
-// static directory
-// app.use(express.static('app/public'));
-// //================================================================
+// override with POST having ?_method=DELETE
+app.use(method('_method'));
 // //Require HandleBars : Standard files for handlebars
 // //==============================================================
 var exphbs = require('express-handlebars');
@@ -30,17 +27,15 @@ var exphbs = require('express-handlebars');
 app.engine('handlebars', exphbs({
 	defaultLayout: 'main'
 }));
+
 app.set('view engine', 'handlebars');
 
 //==============================================================
 // Routes
 // =============================================================
-//add these when files are created 
-//require("./app/routes/api-routes.js")(app)
-//require("./app/routes/html-routes.js")(app)
-app.get('/',function(req,res){
-	res.render("<h1>Hello World</h1>");
-});
+var routes = require("./controllers/burgers_controller.js");
+
+app.get('/',routes);
 
 
 

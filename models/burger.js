@@ -9,7 +9,7 @@ var burgers = {
 	selectAll:function(cb){
 		orm.selectAll('burgers',function(res){
 			cb(res);
-		}
+		})
 	},
 	insertOne:function(value1,cb){
 		orm.insertOne("burgers",value1,function(res){

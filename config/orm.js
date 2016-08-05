@@ -9,11 +9,11 @@ var orm = {
 		
 		var queryLine = "SELECT * FROM ";
 		queryLine = queryLine + tableName;
-		console.log(query);
+		console.log(queryLine);
 		
 		connection.query(queryLine,function(err, res){
 			if(err) throw err;
-			cb(result);
+			cb(res);
 		});
 	},
 	// add a value to the database 
@@ -22,7 +22,7 @@ var orm = {
 
 		connection.query(queryLine,[value1,false],function(err,res){
 			if(err) throw err;
-			cb(result);
+			cb(res);
 		});
 	},
 	//add a function that will update a value 
@@ -39,5 +39,9 @@ var orm = {
 		});
 	}
 };
-
+// Test if orm file works.  IT WORKS!!!!!!
+// orm.selectAll('burgers',function(data){
+// 		var food = {burgers:data};
+// 		console.log(food)
+// })
 module.exports = orm; 

@@ -1,21 +1,17 @@
-<h1>Cats!</h1>
-
-<h2>Cats that are not sleepy!</h2>
+<h1>Burgers</h1>
 
 <ul>
-  {{#each cats}}
-    {{#unless this.sleepy}}
+  {{#each food}}
       <li>
         {{this.name}}
 
-        <form action="cats/update/{{this.id}}?_method=PUT" method="POST">
+        <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
           <input type="hidden" name="sleepy" value="true">
           <button type="submit">SLEEP TIME!</button>
         </form>
 
         {{> cats/delete-cat}}
       </li>
-    {{/unless}}
   {{/each}}
 </ul>
 

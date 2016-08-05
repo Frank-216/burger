@@ -16,12 +16,12 @@ router.get('/',function(req,res){
 	res.redirect('/burgers')
 })
 // Get function to render everything held in the burger database
-router.get("/cats",function(req,res){
+router.get("/burgers ",function(req,res){
 	// call selectAll function with the paramater CB function
 	burger.selectAll(function(data){
-		var cbObject = {burgers:data};
-		console.log(cbObject);
-		res.render("index",bsObject);
+		var food = {burgers:data};
+		console.log(food);
+		res.render("index",food);
 	})
 })
 // Post function to add information to the datebase 
