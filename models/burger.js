@@ -22,5 +22,13 @@ var burgers = {
 		});
 	}
 };
-
+// Verify that Models is working UPDATE IT is Working
+// burgers.selectAll(function(data){
+// 		var food = {burgers:data};
+// 		console.log(food)
+// });
+// burgers.insertOne("Little Swiss Bunshine",function(data){
+// 		var food = {burgers:data};
+// 		console.log(food)
+// });
 module.exports = burgers;

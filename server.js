@@ -5,7 +5,7 @@ var express 	= require('express');
 var bodyParser 	= require('body-parser');
 var method =require('method-override');
 var path = require('path');
-
+var routes = require("./controllers/burgers_controller.js");
 
 // Sets up the Express App
 // =============================================================
@@ -33,9 +33,8 @@ app.set('view engine', 'handlebars');
 //==============================================================
 // Routes
 // =============================================================
-var routes = require("./controllers/burgers_controller.js");
 
-app.get('/',routes);
+app.use("/",routes);
 
 
 
