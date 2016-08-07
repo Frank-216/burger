@@ -33,7 +33,7 @@ var orm = {
 		queryLine = queryLine + " devoured = true";
 		queryLine =queryLine + " Where id = "+ id;
 
-		connection(queryLine,function(err, res){
+		connection.query(queryLine,function(err, res){
 			if(err) throw err;
 			cb(res);
 		});

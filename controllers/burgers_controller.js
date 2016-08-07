@@ -60,7 +60,8 @@ router.get("/burger",function(req,res){
 });
 // Post function to add information to the datebase 
 router.post("/burger/create", function(req,res){
-	console.log("words")
+	var val1 = req.body.name;
+	console.log(val1);
 	// takes the valude of the text box and adds it to the array 
 	burgers.insertOne(val1,function(data){
 		res.redirect("/burger")
