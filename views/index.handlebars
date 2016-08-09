@@ -10,11 +10,11 @@
       <ul>
         {{#each burgers}}
           {{#unless this.devoured}}
-            <li>
+            <li class="border1">
               {{this.burger_name}}
               <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
                 <input type="hidden" name="devoured" value="false">
-                <button type="submit">Ready to Eat</button>
+                <button class = "btn-primary" type="submit ">Ready to Eat</button>
               </form>
             </li>
             <br>
@@ -46,7 +46,7 @@
           <label for="ca">Burger Name:</label>
           <input type="text" id="burger_name" name="name">
         </div>
-        <button type="submit">Add Burger</button>
+        <button class = "btn-danger" type="submit">Add Burger</button>
       </form>
     </div>
    
